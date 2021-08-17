@@ -24,7 +24,20 @@ pizzaJson.map((item, index)=>{
             c('.pizzaWindowArea').style.opacity = 1;
        }, 200);
     });
-    
 
     c('.pizza-area').append( pizzaItem );  
 });
+
+
+    //Evento modal
+
+    function closeModal() {
+        c('.pizzaWindowArea').style.opacity = 0;
+        setTimeout(()=>{
+            c('.pizzaWindowArea').style.display = 'none';
+        }, 500); 
+    }
+
+    cs ('.pizzaInfo--cancelMobileButton, .pizzaInfo--cancelButton').forEach((item)=>{
+        item.addEventListener('click', closeModal);
+    });
