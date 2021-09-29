@@ -77,5 +77,13 @@ pizzaJson.map((item, index)=>{
     });
 
     c('.pizzaInfo--addButton').addEventListener('click', ()=>{
-        console.log("Pizza: "+modalKey);
+        let size = parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'));
+        
+        cart.push({
+            id:pizzaJson[modalKey].id,
+            size,
+            qt:modalQt
+        });
+
+        closeModal();
     });
